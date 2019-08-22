@@ -1,0 +1,6 @@
+**/*.jpg
+env
+**/*.pyc
+build
+.vscode
+**/*.json
