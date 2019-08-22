@@ -1,0 +1,23 @@
+{% extends "students/base.html" %}
+{% load crispy_forms_tags%}
+  {% block content%}
+    <div class="card-header card-header-primary">
+            <h4 class="card-title">Home </h4>
+            {% if user.is_authenticated %}
+            <p class="card-category"><a class="mr-2" href="#">Welcome: {{ user.first_name }} {{ user.last_name }}</a></p>
+            {% else %}{% endif %}
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <h4 class="card-title">left side</h4>
+                
+              </div>
+
+              <div class="col-md-6">
+                <h4 class="card-title">Right side</h4>
+                
+              </div>
+            </div>
+          </div>
+  {% endblock content%}
