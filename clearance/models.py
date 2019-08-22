@@ -26,7 +26,7 @@ class Course(models.Model):
         return self.course 
 
 class Course_Subject(models.Model):
-    unit = models.CharField(max_length=100)
+    subject = models.CharField(max_length=100)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     def __str__(self):
         return self.unit
