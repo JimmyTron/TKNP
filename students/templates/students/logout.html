@@ -1,0 +1,7 @@
+{% extends "students/base.html" %}
+{% block content%}
+        <h2>You have Been Signed out!</h2>
+    <div class="border-top pt-3">
+            <small class="text-muted">Sign In Again!  <a href=" {% url 'students-login' %}">Sign In</a></small>
+    </div>
+{% endblock content%}
