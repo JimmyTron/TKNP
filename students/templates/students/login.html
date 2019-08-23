@@ -1,0 +1,53 @@
+{% extends "students/base.html" %}
+{% load crispy_forms_tags%}
+{% block content%}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header card-header-primary">
+                <h4 class="card-title">Student's Log In</h4>
+                <p class="card-category">Log in to your account</p>
+              </div>
+              <div class="card-body">
+                    <form method="POST">
+                        <div class="row">
+                          {% csrf_token %}
+                              <div class="col-md-5">
+                                  <div class="form-group">
+                                    {{ form|crispy }}
+                                  </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                    <button type="submit" class="btn btn-primary pull-right">Login</button>
+                                      <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                              </div>
+                                  </form>
+                                <div class="col-md-12">
+                                  <div class="border-top pt-3">
+                                    <small class="text-muted">Need  An Account? <a class="ml-2" href=" {% url 'students-registration' %}">Sign Up Now</a></small>
+                                  </div>
+                                </div>
+                          </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+              <div class="card card-profile">
+                <div class="card-body">
+                  <h6 class="card-category">Tips</h6>
+                  <h4 class="card-title">Getting Started</h4>
+                  <p class="card-description">This site is a comprehensive set of applications that will enable you to get through the process of clearance.</p> 
+                  <p class="card-description">To access most functionality on this site you need to first login into your account.</p> 
+                  <p class="card-description">In case you do not have an account already, you can as well create an account by following the 'Register' (sign up) link.</p>
+                  <a href="#clear" class="btn btn-primary btn-round">Documentation</a>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+{% endblock content%}
