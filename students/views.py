@@ -1,24 +1,16 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-# Create your views here.
-
+from .forms import StudentRegistrationForm, StudentUpdateForm, ProfileUpdateForm
 
 def home(request):
     context = {
         'title': 'Student'
     }
-    return render(request, 'students/page.html',context)
-
-def profile(request):
-    context = {
-        'title': 'Profile'
-    }
-
-    return render(request, 'students/profile.html', context)
+    return render(request, 'students/home.html',context)
 
     
-"""def register(request):
+def register(request):
     if request.method == 'POST':
         form = StudentRegistrationForm(request.POST)
         if form.is_valid():
@@ -48,10 +40,9 @@ def profile(request):
         p_form = ProfileUpdateForm(instance=request.user.profile)
 
     context = {
+        'title': 'Profile',
         'u_form': u_form,
         'p_form': p_form
     }
 
     return render(request, 'students/profile.html', context)
-
-"""
