@@ -15,12 +15,12 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- Material Kit CSS -->
-  <link href="{% static 'students/material-dashboard.css' %}" rel="stylesheet" />
+  <link href="{% static 'students/material-dashboard.css' %}?v=2.1.0" rel="stylesheet" />
 </head>
 
 <body class="dark-edition">
   <div class="wrapper ">
-    <div class="sidebar" data-color="azure" data-background-color="black" data-image="{% static 'students/arrow.jpg' %}">
+    <div class="sidebar" data-color="orange" data-background-color="black" data-image="{% static 'students/sidebar-2.jpg' %}">
       <!--
       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -34,7 +34,7 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
          <!-- your sidebar here -->
-          <li class="nav-item active  ">
+          <li class="nav-item ">
             <a class="nav-link" href="{% url 'Student' %}">
               <i class="material-icons"></i>
               <p>Homepage</p>
@@ -143,8 +143,11 @@
                   {% if messages %}
                   {% for message in messages %}
                   <div class="alert alert-{{ message.tags }}">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <i class="material-icons">close</i>
+                    </button>
                     <span>{{ message }}</span> 
-                  </div>
+                  </div>  
                   {% endfor %}
                   {% endif %}  
                   {% block content %} {% endblock %}
@@ -155,7 +158,17 @@
             <ul>
               <li>
                 <a href="https://www.kisumupoly.ac.ke">
-                    TKNP Clearance Portal
+                    TKNP 
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'Documentation' %}">
+                    Documentation
+                </a>
+              </li>
+              <li>
+                <a href="https://creative-tim.com/presentation">
+                  About Us
                 </a>
               </li>
             </ul>
@@ -173,15 +186,24 @@
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="https:/unpkg.com/default-passive-events"></script>
+  <script src="{% static 'students/js/core/jquery.min.js' %}"></script>
+  <script src="{% static 'students/js/core/popper.min.js' %}"></script>
+  <script src="{% static 'students/js/core/bootstrap-material-design.min.js' %} "></script>
+  <script src="https://unpkg.com/default-passive-events"></script>
+  <script src="{% static 'students/js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
   <!-- Place this tag in your head or just before your close body tag. -->
-  <script async defer src="https:/buttons.github.io/buttons.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chartist JS -->
+  <script src="{% static  'students/js/plugins/chartist.min.js' %} "></script>
   <!--  Notifications Plugin    -->
+  <script src="{% static 'students/js/plugins/bootstrap-notify.js' %}"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <!-- <script>
+  <script src="{% static  'students/js/material-dashboard.js' %}?v=2.1.0"></script>
+  <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+  <script src="{% static 'students/demo/demo.js' %}"></script>
+  <script>
     $(document).ready(function() {
       $().ready(function() {
         $sidebar = $('.sidebar');
@@ -342,7 +364,7 @@
         });
       });
     });
-  </script> -->
+  </script>
 </body>
 
 </html>
