@@ -13,7 +13,7 @@ class Request(models.Model):
 
 class Department(models.Model):
     department = models.CharField(max_length=100)
-    hod = models.ForeignKey(User, on_delete=models.CASCADE)
+    hod = models.OneToOneField(User, on_delete=models.CASCADE)
     
     def __str__(self):
         return self.department
