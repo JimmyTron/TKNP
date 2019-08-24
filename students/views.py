@@ -9,6 +9,12 @@ def home(request):
     }
     return render(request, 'students/home.html',context)
 
+def docs(request):
+    context = {
+        'title': 'Documentation'
+    }
+    return render(request, 'students/documentation.html',context)
+
     
 def register(request):
     if request.method == 'POST':
