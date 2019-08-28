@@ -14,46 +14,46 @@
     </div>
     <div class="sidebar-wrapper">
       <ul class="nav">
-       <!-- your sidebar here -->
-        <li class="nav-item active">
-          <a class="nav-link" href="{% url 'Student' %}">
-            <i class="material-icons"></i>
-            <p>Homepage</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="{% url 'Profile' %}">
-            <i class="material-icons"></i>
-            <p>Student Profile</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link" href="#">
-              <i class="material-icons"></i>
-              <p>Clearance Status</p>
-            </a>
-          </li>
-        <li class="nav-item ">
-              <a class="nav-link" href="#">
-                <i class="material-icons"></i>
-                <p>Departmental Clearance</p>
-              </a>
-            </li>
-        <li class="nav-item ">
-            <a class="nav-link" href="#">
-            <i class="material-icons"></i>
-            <p>General Clearance</p>
-            </a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link" href="#">
-            <i class="material-icons"></i>
-            <p>Clearance History</p>
-            </a>
-        </li>
-      </ul>
-    </div>
-  </div>  
+          <!-- your sidebar here -->
+  <li class="nav-item active">
+    <a class="nav-link" href="{% url 'Student' %}">
+      <i class="material-icons">home</i>
+      <p>Homepage</p>
+    </a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-link" href="{% url 'Profile' %}">
+      <i class="material-icons">person</i>
+      <p>Student Profile</p>
+    </a>
+  </li>
+  <li class="nav-item ">
+      <a class="nav-link" href="#">
+        <i class="material-icons">check</i>
+        <p>Clearance Status</p>
+      </a>
+    </li>
+  <li class="nav-item ">
+        <a class="nav-link" href="#">
+          <i class="material-icons">school</i>
+          <p>Departmental Clearance</p>
+        </a>
+      </li>
+  <li class="nav-item ">
+      <a class="nav-link" href="#">
+      <i class="material-icons">people</i>
+      <p>General Clearance</p>
+      </a>
+  </li>
+  <li class="nav-item ">
+      <a class="nav-link" href="#">
+      <i class="material-icons">history</i>
+      <p>Clearance History</p>
+      </a>
+  </li>
+</ul>
+</div>
+</div>
     <div class="card-header card-header-primary">
             <h4 class="card-title">Home </h4>
             {% if user.is_authenticated %}
