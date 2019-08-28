@@ -36,37 +36,37 @@
          <!-- your sidebar here -->
           <li class="nav-item ">
             <a class="nav-link" href="{% url 'Student' %}">
-              <i class="material-icons"></i>
+              <i class="material-icons">home</i>
               <p>Homepage</p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="{% url 'Profile' %}">
-              <i class="material-icons"></i>
+              <i class="material-icons">person</i>
               <p>Student Profile</p>
             </a>
           </li>
           <li class="nav-item ">
               <a class="nav-link" href="#">
-                <i class="material-icons"></i>
+                <i class="material-icons">check</i>
                 <p>Clearance Status</p>
               </a>
             </li>
           <li class="nav-item ">
                 <a class="nav-link" href="#">
-                  <i class="material-icons"></i>
+                  <i class="material-icons">school</i>
                   <p>Departmental Clearance</p>
                 </a>
               </li>
           <li class="nav-item ">
               <a class="nav-link" href="#">
-              <i class="material-icons"></i>
+              <i class="material-icons">people</i>
               <p>General Clearance</p>
               </a>
           </li>
           <li class="nav-item ">
               <a class="nav-link" href="#">
-              <i class="material-icons"></i>
+              <i class="material-icons">history</i>
               <p>Clearance History</p>
               </a>
           </li>
@@ -90,7 +90,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                      <small class="material-icons">Home</small>
+                      <i class="material-icons">home</i>
                       <p class="d-lg-none d-md-block">Home</p>
                     </a>
                   </li>
@@ -98,33 +98,34 @@
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'Student' %}">
-                          <small class="material-icons">Clear</small>
+                          <i class="material-icons">check</i>
                                 <p class="d-lg-none d-md-block">Clearance</p>
                         </a>
                     </li>
                   
                     <li class="nav-item">
                             <a class="nav-link" href="{% url 'Profile' %}">
-                              <small class="material-icons">Profile</small>
+                              <i class="material-icons">person</i>
                                     <p class="d-lg-none d-md-block">Profile</p>
                             </a>
                     </li> 
                     <li class="nav-item">
                             <a class="nav-link" href="{% url 'logout' %}">
-                              <small class="material-icons">Logout</small>
-                                    <p class="d-lg-none d-md-block">Logout</p>
-                            </a>
+                              <i class="material-icons">logout</i>
+                              <p class="d-lg-none d-md-block">
+                                Logout00523
+                              </p>
                     </li>
                     {% else %}
                     <li class="nav-item">
                             <a class="nav-link" href="{% url 'students-login' %}">
-                              <small class="material-icons">Login</small>
+                              <i class="material-icons">input</i>
                                     <p class="d-lg-none d-md-block">Login</p>
                             </a>
                     </li> 
                     <li class="nav-item">
                             <a class="nav-link" href="{% url 'students-registration' %}">
-                              <small class="material-icons">Register</small>
+                              <i class="material-icons">people</i>
                                     <p class="d-lg-none d-md-block">Register</p>
                             </a>
                     </li>  
