@@ -9,6 +9,7 @@ admin.site.site_title ="Admin"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('students.urls')),
+    path('', include('clearance.urls')),
 ]
 
 if settings.DEBUG:
