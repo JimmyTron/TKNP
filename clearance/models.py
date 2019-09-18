@@ -13,7 +13,7 @@ class Request(models.Model):
     request = models.CharField(default="Clearance Request", max_length=100)
     departments = models.ManyToManyField(Department)
     date_posted = models.DateTimeField(default=timezone.now)
-    student = models.ForeignKey(User, on_delete=models.CASCADE)
+    student = models.ForeignKey(User, on_delete=models.CASCADE) #change to OneToOneField to only have one request per user
 
     def __str__(self):
         #return f'{self.student.profile.Adm_no, self.student.first_name, self.request}'
