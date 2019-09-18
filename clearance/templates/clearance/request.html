@@ -1,11 +1,14 @@
 {% extends "students/base.html" %}
 {% load crispy_forms_tags%}
   {% block content%}
+  <div class="sidebar" data-color="orange" data-background-color="black" data-image="{% static 'students/img/sidebar-2.jpg}">
+    <!--
+    Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
-  <div class="sidebar" data-color="azure" data-background-color="black" data-image="{% static 'students/sidebar-2.jpg}">
-      <div class="logo">
-
-      <a href="http://www.kisumupoly.ac.ke" class="simple-text logo-normal">
+    Tip 2: you can also add an image using data-image tag
+-->
+    <div class="logo">
+      <a href="http://www.kisumupoly. ac.ke" class="simple-text logo-normal">
         TKNP Clearance Portal
       </a>
     </div>
@@ -18,21 +21,19 @@
       <p>Homepage</p>
     </a>
   </li>
-  <li class="nav-item active">
+  <li class="nav-item ">
     <a class="nav-link" href="{% url 'Profile' %}">
       <i class="material-icons">person</i>
       <p>Student Profile</p>
     </a>
   </li>
+  <li class="nav-item active ">
+      <a class="nav-link" href="{% url 'Clearance' %}">
+        <i class="material-icons">check</i>
+        <p>Clearance </p>
+      </a>
+    </li>
   <li class="nav-item ">
-
-    <a class="nav-link" href="{% url 'Clearance' %}">
-      <i class="material-icons">check</i>
-      <p>Clearance </p>
-    </a>
-  </li>
-  <li class="nav-item ">
-
         <a class="nav-link" href="#">
           <i class="material-icons">school</i>
           <p>Departmental Clearance</p>
@@ -52,41 +53,31 @@
   </li>
 </ul>
 </div>
-
-</div>
-
+  </div>
+  <div class="content">
     {% if user.is_authenticated %}
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-8">
         <div class="card">
           <div class="card-header card-header-primary">
-
-            <!-- <h4 class="card-title">{{ user.username }}'s Profile</h4> -->
-            <h4 class="card-title">  {{ user.first_name }} {{ user.last_name }}'s Profile</h4>
-            <p class="card-category">Complete your profile</p>
+            <h4 class="card-title">{{ user.username }}'s Clearance</h4>
+            <p class="card-category">Make Clearance Request</p>
           </div>
-         
-
           <div class="card-body">
           <form method="POST" enctype="multipart/form-data">
               <div class="row">
                 {% csrf_token %}
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group">
-                          {{ u_form|crispy }}
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                        {{ p_form|crispy }}
+                          {{ form|crispy }}
                         </div>
                     </div>
               </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
-            <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+            <button type="submit" class="btn btn-primary pull-right">Submit Request</button>
               <div class="clearfix"></div>
             </div>
           </div>
@@ -112,9 +103,7 @@
             <p class="card-description">
               {{ user.profile.Adm_no }}
             </p>
-
-            <a href=" {% url 'Clearance' %} " class="btn btn-primary btn-round">Clearance</a>
-
+            <a href="#clear" class="btn btn-primary btn-round">Clearance</a>
           </div>
         </div>
       </div>

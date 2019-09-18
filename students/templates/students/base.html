@@ -20,13 +20,13 @@
 
 <body class="dark-edition">
   <div class="wrapper ">
-    <div class="sidebar" data-color="orange" data-background-color="black" data-image="{% static 'students/sidebar-2.jpg' %}">
+    <div class="sidebar" data-color="azure" data-background-color="black" data-image="{% static 'students/sidebar-2.jpg' %}">
       <!--
       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
       Tip 2: you can also add an image using data-image tag
   -->
-      <div class="logo">
+    <div class="logo">
         <a href="http://www.kisumupoly.ac.ke" class="simple-text logo-normal">
           TKNP Clearance Portal
         </a>
@@ -47,11 +47,12 @@
             </a>
           </li>
           <li class="nav-item ">
-              <a class="nav-link" href="#">
-                <i class="material-icons">check</i>
-                <p>Clearance Status</p>
-              </a>
-            </li>
+
+            <a class="nav-link" href="{% url 'Clearance' %}">
+              <i class="material-icons">check</i>
+              <p>Clearance </p>
+            </a>
+          </li>
           <li class="nav-item ">
                 <a class="nav-link" href="#">
                   <i class="material-icons">school</i>
@@ -83,8 +84,7 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
+
           </button>
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
@@ -93,7 +93,8 @@
                       <i class="material-icons">home</i>
                       <p class="d-lg-none d-md-block">Home</p>
                     </a>
-                  </li>
+
+                </li>
               <!-- your navbar here -->
                     {% if user.is_authenticated %}
                     <li class="nav-item">
@@ -112,8 +113,8 @@
                     <li class="nav-item">
                             <a class="nav-link" href="{% url 'logout' %}">
                               <i class="material-icons">logout</i>
-                              <p class="d-lg-none d-md-block">Logout</p>
-                            </a>
+
+
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -125,7 +126,8 @@
                     <li class="nav-item">
                             <a class="nav-link" href="{% url 'students-registration' %}">
                               <i class="material-icons">people</i>
-                                    <p class="d-lg-none d-md-block">Register</p>
+
+
                             </a>
                     </li>  
                     {% endif %}
