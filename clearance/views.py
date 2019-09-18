@@ -6,7 +6,7 @@ from .forms import ClearanceRequestForm
 @login_required
 def clearance(request):
     if request.method == 'POST':
-        form = ClearanceRequestForm(request.POST, instance=request.user)
+        form = ClearanceRequestForm(request.POST, instance=request.user.student)
         if form.is_valid():
             form.save()
             student = form.cleaned_data.get('student')

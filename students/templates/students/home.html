@@ -1,7 +1,7 @@
 {% extends "students/base.html" %}
 {% load crispy_forms_tags%}
   {% block content%}
-  <div class="sidebar" data-color="orange" data-background-color="black" data-image="{% static 'students/sidebar-2.jpg}">
+  <div class="sidebar" data-color="azure" data-background-color="black" data-image="{% static 'students/sidebar-2.jpg}">
     <!--
     Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -55,9 +55,9 @@
 </div>
 </div>
     <div class="card-header card-header-primary">
-            <h4 class="card-title">Home </h4>
+            <h4 class="card-title">Students Portal </h4>
             {% if user.is_authenticated %}
-            <p class="card-category"><a class="mr-2" href="#">Student: {{ user.first_name }} {{ user.last_name }}</a></p>
+            <p class="card-category"><a class="mr-2" href="#">Welcome: {{ user.first_name }} {{ user.last_name }}</a></p>
             {% else %}{% endif %}
           </div>
           <div class="card-body">

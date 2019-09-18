@@ -1,7 +1,7 @@
-**/*.jpg
 env
 **/*.pyc
 build
 .vscode
 **/*.json
 **/*.png
+**/*.jpg
