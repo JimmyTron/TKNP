@@ -1,8 +1,10 @@
 {% extends "students/base.html" %}
 {% load crispy_forms_tags%}
   {% block content%}
+
   <div class="sidebar" data-color="azure" data-background-color="black" data-image="{% static 'students/sidebar-2.jpg}">
       <div class="logo">
+
       <a href="http://www.kisumupoly.ac.ke" class="simple-text logo-normal">
         TKNP Clearance Portal
       </a>
@@ -23,12 +25,14 @@
     </a>
   </li>
   <li class="nav-item ">
+
     <a class="nav-link" href="{% url 'Clearance' %}">
       <i class="material-icons">check</i>
       <p>Clearance </p>
     </a>
   </li>
   <li class="nav-item ">
+
         <a class="nav-link" href="#">
           <i class="material-icons">school</i>
           <p>Departmental Clearance</p>
@@ -48,18 +52,22 @@
   </li>
 </ul>
 </div>
+
 </div>
+
     {% if user.is_authenticated %}
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-8">
         <div class="card">
           <div class="card-header card-header-primary">
+
             <!-- <h4 class="card-title">{{ user.username }}'s Profile</h4> -->
             <h4 class="card-title">  {{ user.first_name }} {{ user.last_name }}'s Profile</h4>
             <p class="card-category">Complete your profile</p>
           </div>
          
+
           <div class="card-body">
           <form method="POST" enctype="multipart/form-data">
               <div class="row">
@@ -104,7 +112,9 @@
             <p class="card-description">
               {{ user.profile.Adm_no }}
             </p>
+
             <a href=" {% url 'Clearance' %} " class="btn btn-primary btn-round">Clearance</a>
+
           </div>
         </div>
       </div>
