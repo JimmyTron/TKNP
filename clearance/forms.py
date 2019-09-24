@@ -8,4 +8,4 @@ class ClearanceRequestForm(forms.ModelForm):
 
     class Meta:
         model = Request
-        fields = ['student', 'request', 'departments','date_posted']
+        fields = ['student', 'request','date_posted']

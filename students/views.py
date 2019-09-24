@@ -2,10 +2,12 @@ from django.shortcuts import render,redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import StudentRegistrationForm, StudentUpdateForm, ProfileUpdateForm
+from clearance.models import Request, Department
 
 def home(request):
     context = {
-        'title': 'Student'
+        'title': 'Clearance Home',
+        'posts': Department.objects.all()
     }
     return render(request, 'students/home.html',context)
 

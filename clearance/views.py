@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import ClearanceRequestForm
+from .models import Request
 
 @login_required
 def clearance(request):
@@ -14,4 +15,12 @@ def clearance(request):
             return redirect('Student')
     else:
         form = ClearanceRequestForm(instance=request.user)
-    return render(request, 'clearance/request.html', {'form':form,'title':'Students Clearane Request'})
+    return render(request, 'clearance/clearance.html', {'form':form,'title':'Students Clearane Request'})
+
+
+def requests(request):
+    context = {
+        'title': 'Clearance Requests',
+        'posts': Request.objects.all()
+    }
+    return render(request, 'clearance/requests.html',context)
