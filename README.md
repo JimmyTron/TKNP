@@ -1,4 +1,4 @@
-# tknp clearance portal
+# TKNP CLEARANCE PORTAL
 The process is divided into Two major categories
 Departmental Clearance - Form 2103
 General clearance - Form 2102
