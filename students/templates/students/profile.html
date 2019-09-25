@@ -1,0 +1,141 @@
+{% extends "students/base.html" %}
+{% load crispy_forms_tags%}
+  {% block content%}
+
+  <div class="sidebar" data-color="azure" data-background-color="black" data-image="{% static 'students/sidebar-2.jpg}">
+      <div class="logo">
+
+      <a href="http://www.kisumupoly.ac.ke" class="simple-text logo-normal">
+        TKNP Clearance Portal
+      </a>
+    </div>
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+          <!-- your sidebar here -->
+  <li class="nav-item ">
+    <a class="nav-link" href="{% url 'Student' %}">
+      <i class="material-icons">home</i>
+      <p>Homepage</p>
+    </a>
+  </li>
+  <li class="nav-item active">
+    <a class="nav-link" href="{% url 'Profile' %}">
+      <i class="material-icons">person</i>
+      <p>Student Profile</p>
+    </a>
+  </li>
+  <li class="nav-item ">
+
+    <a class="nav-link" href="{% url 'Clearance' %}">
+      <i class="material-icons">check</i>
+      <p>Clearance </p>
+    </a>
+  </li>
+  <li class="nav-item ">
+
+        <a class="nav-link" href="#">
+          <i class="material-icons">school</i>
+          <p>Departmental Clearance</p>
+        </a>
+      </li>
+  <li class="nav-item ">
+      <a class="nav-link" href="#">
+      <i class="material-icons">people</i>
+      <p>General Clearance</p>
+      </a>
+  </li>
+  <li class="nav-item ">
+      <a class="nav-link" href="#">
+      <i class="material-icons">history</i>
+      <p>Clearance History</p>
+      </a>
+  </li>
+</ul>
+</div>
+
+</div>
+
+    {% if user.is_authenticated %}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header card-header-primary">
+
+            <!-- <h4 class="card-title">{{ user.username }}'s Profile</h4> -->
+            <h4 class="card-title">  {{ user.first_name }} {{ user.last_name }}'s Profile</h4>
+            <p class="card-category">Complete your profile</p>
+          </div>
+         
+
+          <div class="card-body">
+          <form method="POST" enctype="multipart/form-data">
+              <div class="row">
+                {% csrf_token %}
+                    <div class="col-md-6">
+                        <div class="form-group">
+                          {{ u_form|crispy }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        {{ p_form|crispy }}
+                        </div>
+                    </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+            <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          </form>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-profile">
+          <div class="card-avatar">
+            <a href="{{ user.profile.image.url }}">
+              <img class="img" src="{{ user.profile.image.url }}" />
+            </a>
+          </div>
+          <div class="card-body">
+            <h6 class="card-category">{{ user.username }}</h6>
+            <h4 class="card-title">{{ user.first_name }} {{ user.last_name }}</h4>
+            <p class="card-description">
+              {{ user.profile.course.department }}
+            </p> 
+            <p class="card-description">
+              {{ user.profile.course }}
+            </p> 
+            <p class="card-description">
+              {{ user.profile.Adm_no }}
+            </p>
+
+            <a href=" {% url 'Clearance' %} " class="btn btn-primary btn-round">Clearance</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  {% else %}
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header card-header-primary">
+                <h4 class="card-title">Create Profile</h4>
+                <p class="card-category">Login/ Register first then Edit/ Create your profile</p>
+                <small class="text-muted">Sign In Again!  <a href=" {% url 'students-login' %}">Sign In</a></small>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    {% endif %}
+</div>
+{% endblock content%}

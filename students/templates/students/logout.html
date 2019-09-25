@@ -1,0 +1,18 @@
+{% extends "students/base.html" %}
+{% block content%}
+        
+      <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <i class="material-icons">close</i>
+        </button>
+        <span>You have Been Signed out!</span> 
+      </div>  
+<div class="border-top pt-3">
+<div class="card-body">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="card-title"><small class="text-muted"> Sign In Again!
+      <a href="{% url 'students-login' %}" class="btn btn-primary btn-round btn-lg">Sign In</a></h4>
+    </div>
+</div>
+{% endblock content%}
