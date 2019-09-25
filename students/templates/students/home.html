@@ -1,25 +1,14 @@
 {% extends "students/base.html" %}
 {% load crispy_forms_tags%}
   {% block content%}
-  <div class="sidebar" data-color="orange" data-background-color="black" data-image="{% static 'students/sidebar-2.jpg}">
-    <!--
-    Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-    Tip 2: you can also add an image using data-image tag
--->
-    <div class="logo">
-      <a href="http://www.kisumupoly.ac.ke" class="simple-text logo-normal">
-        TKNP Clearance Portal
-      </a>
-    </div>
-  
-</div>
-    <div class="card-header card-header-primary">
-            <h4 class="card-title">Home </h4>
+      <div class="card-header card-header-primary">
+          <h4 class="card-title">Home </h4>
             {% if user.is_authenticated %}
-            <p class="card-category"><a class="mr-2" href="#">Student: {{ user.first_name }} {{ user.last_name }}</a></p>
+              <p class="card-category">
+                <a class="mr-2" href="#">Student: {{ user.first_name }} {{ user.last_name }}</a>
+              </p>
             {% else %}{% endif %}
-          </div>
+      </div>
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
@@ -33,17 +22,15 @@
                   <div class="card-body table-responsive">
                     <table class="table table-hover">
                       <thead class="text-info">
-                        <th>ID</th>
                         <th>Course</th>
                         <th>HOD</th>
                         <th>Status</th>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>1</td>
                           <td>{{ user.profile.course }}</td>
                           <td>{{ user.profile.department.hod }}</td>
-                          <td>Cleared</td>
+                          <td>Not Cleared</td>
                         </tr>
                       </tbody>
                     </table>
@@ -59,7 +46,6 @@
                   <div class="card-body table-responsive">
                   <table class="table table-hover">
                       <thead class="text-warning">
-                        <th>ID</th>
                         <th>Department</th>
                         <th>HOD</th>
                         <th>Status</th>
@@ -67,7 +53,6 @@
                     {% for post in posts %} 
                     <tbody>
                         <tr>
-                          <td>1</td>
                           <td>{{ post.department }}</td>
                           <td>{{ post.hod }}</td>
                           <td>Not Cleared</td>

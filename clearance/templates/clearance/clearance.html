@@ -1,60 +1,7 @@
 {% extends "students/base.html" %}
 {% load crispy_forms_tags%}
   {% block content%}
-  <div class="sidebar" data-color="orange" data-background-color="black" data-image="{% static 'students/img/sidebar-2.jpg}">
-    <!--
-    Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-    Tip 2: you can also add an image using data-image tag
--->
-    <div class="logo">
-      <a href="http://www.kisumupoly. ac.ke" class="simple-text logo-normal">
-        TKNP Clearance Portal
-      </a>
-    </div>
-    <div class="sidebar-wrapper">
-      <ul class="nav">
-          <!-- your sidebar here -->
-  <li class="nav-item ">
-    <a class="nav-link" href="{% url 'Student' %}">
-      <i class="material-icons">home</i>
-      <p>Homepage</p>
-    </a>
-  </li>
-  <li class="nav-item ">
-    <a class="nav-link" href="{% url 'Profile' %}">
-      <i class="material-icons">person</i>
-      <p>Student Profile</p>
-    </a>
-  </li>
-  <li class="nav-item active ">
-      <a class="nav-link" href="{% url 'Clearance' %}">
-        <i class="material-icons">check</i>
-        <p>Clearance </p>
-      </a>
-    </li>
-  <li class="nav-item ">
-        <a class="nav-link" href="#">
-          <i class="material-icons">school</i>
-          <p>Departmental Clearance</p>
-        </a>
-      </li>
-  <li class="nav-item ">
-      <a class="nav-link" href="#">
-      <i class="material-icons">people</i>
-      <p>General Clearance</p>
-      </a>
-  </li>
-  <li class="nav-item ">
-      <a class="nav-link" href="#">
-      <i class="material-icons">history</i>
-      <p>Clearance History</p>
-      </a>
-  </li>
-</ul>
-</div>
-  </div>
-  <div class="content">
+   <div class="content">
     {% if user.is_authenticated %}
   <div class="container-fluid">
     <div class="row">

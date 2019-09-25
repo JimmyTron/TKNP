@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import StudentRegistrationForm, StudentUpdateForm, ProfileUpdateForm
-from clearance.models import Request, Department
+from clearance.models import Department, Subject
 
 def home(request):
     context = {
@@ -17,7 +17,22 @@ def docs(request):
     }
     return render(request, 'students/documentation.html',context)
 
-    
+@login_required
+def general(request):
+    context = {
+        'title': 'General Clearance',
+        'posts': Department.objects.all()
+    }
+    return render(request, 'students/general.html',context)
+   
+@login_required
+def departmental(request):
+    context = {
+        'title': 'Departmental Clearance',
+        'posts': Subject.objects.all()
+    }
+    return render(request, 'students/departmental.html',context)
+
 def register(request):
     if request.method == 'POST':
         form = StudentRegistrationForm(request.POST)
