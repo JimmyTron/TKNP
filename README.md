@@ -80,6 +80,6 @@ If you spot one, kindly email me @ nignanthomas@gmail.com
 [Thomas Nignan](https://github.com/nignanthomas/)
 
 # Acknowledgments :bow:
-[Andela Rwanda](https://www.andela.com)
+[Podii](https://www.podiihq.com)
 
 [Contents](#Table-of-Contents)
