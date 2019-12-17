@@ -39,7 +39,7 @@ whereby from the national library It is still valid; it remains as it is by allo
 ### Matron
 ### Sports office
 ### Examination Office
-# Admissions & Student Records
+## Admissions & Student Records
 # Finance Office
 Finance Office only acts on completion of all other departments to give a charge sheet or just to clear the student.
 # Registrar's Office
