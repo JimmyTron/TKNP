@@ -55,6 +55,38 @@ Finance Office only acts on completion of all other departments to give a charge
 # Registrar's Office
 Finally the Registrar is handed the form and if everything is in place a slip/certificate is issued.
 
+## Features
+   + The home page presents users with all available navigation to various functions.
+   + To view a clearance request of a specific Department the user has to click on that Department.
+   + The system flow is simple.
+
+
+## Behavior Driven Development
+| Input                | Behavior                         | Output                        |
+| -------------------  | -------------------------------- | ----------------------------- |
+| Data from index page | landing page loads               | Displays available Clearance form |
+| Click on any category| New page loads                   | All requests from the students gets displayed|
+
+## View Live Site here
+View the complete site [here](https://TKNPClearance.herokuapp.com/)
+
+## Technologies Used
+   - Python 3.6
+   - Django Framework
+   - HTML, CSS and Bootstrap
+   - JavaScript
+   - Git
+
+
+## Set-up and Installation
+   1. Clone or download the Repo
+   2. Create a virtual environment
+   3. Edit the start.sh file with your email account and password
+   4. Run chmod a+x start.py
+   5. Run ./start.sh
+   6. Access the application through `localhost:8000`
+
+
 # Technologies Stack :gear:
 | Frontend-UI | Backend-API    |
 | ---------   | -----------    |
@@ -63,7 +95,7 @@ Finally the Registrar is handed the form and if everything is in place a slip/ce
 | JS          | Mysql          |
 
 # Management :pencil:
-This project is managed using [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2361810).
+This project is managed using [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/).
 
 # Contribution Guidelines :two_men_holding_hands:
 1. Explain why you're making a change.
