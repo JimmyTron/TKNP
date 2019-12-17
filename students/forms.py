@@ -26,5 +26,3 @@ class ProfileUpdateForm(forms.ModelForm):
 class DepartmentalClearanceForm(object):
     pass        
 
-class ClearanceForm(object):
-    pass
