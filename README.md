@@ -73,13 +73,13 @@ This project is managed using [Pivotal Tracker](https://www.pivotaltracker.com/n
 
 # Bugs :bug:
 No known bugs.
-If you spot one, kindly email me @ nignanthomas@gmail.com
+If you spot one, kindly email me @ jimmytron17@gmail.com
 
 # Author :computer:
 	 
-[Thomas Nignan](https://github.com/nignanthomas/)
+[Jimmy Tron](https://github.com/JimmyTron/)
 
 # Acknowledgments :bow:
-[Andela Rwanda](https://www.andela.com)
+[Podii](https://www.podiihq.com)
 
 [Contents](#Table-of-Contents)
