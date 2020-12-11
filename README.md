@@ -112,6 +112,7 @@ If you spot one, kindly email me @ jimmytron17@gmail.com
 [Jimmy Tron](https://github.com/JimmyTron/)
 
 # Acknowledgments :bow:
-[Podii](https://www.podiihq.com)
+[Kisumu Polytechnic](https://www.kisumupoly.ac.ke)
+[TKNP Tech Hub](https://kisumu-poly-tech-hub.github.io/)
 
 [Contents](#Table-of-Contents)
