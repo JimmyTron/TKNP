@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn tknp.wsgi --log-file -
+web: gunicorn tknp.wsgi --log-file -
