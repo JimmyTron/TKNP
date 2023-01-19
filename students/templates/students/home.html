@@ -30,7 +30,7 @@
                         <tr>
                           <td>{{ user.profile.course }}</td>
                           <td>{{ user.profile.department.hod }}</td>
-                          <td>Not Cleared</td>
+                          <td>{{post.status}}</td>
                         </tr>
                       </tbody>
                     </table>
@@ -55,7 +55,7 @@
                         <tr>
                           <td>{{ post.department }}</td>
                           <td>{{ post.hod }}</td>
-                          <td>Not Cleared</td>
+                          <td>{{post.status}}</td>
                         </tr>
                     {% endfor %}
                       </tbody>

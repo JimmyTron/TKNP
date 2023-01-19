@@ -10,10 +10,16 @@ class Department(models.Model):
         return self.department
 
 class Request(models.Model):
+    STATUS = (
+    (0,"Pending"),
+    (1,"Cleared"),
+    (2,"Declined")
+     )
     request = models.CharField(default="Clearance Request", max_length=100)
     departments = models.ManyToManyField(Department)
     date_posted = models.DateTimeField(default=timezone.now)
     student = models.ForeignKey(User, on_delete=models.CASCADE)
+    status = models.IntegerField(choices=STATUS, default=0) 
 
     def __str__(self):
         #return f'{self.student.profile.Adm_no, self.student.first_name, self.request}'
