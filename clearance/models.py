@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models import signals
+from django.dispatch import receiver
 from django.utils import timezone
 from django.contrib.auth.models import User
 
@@ -40,3 +42,14 @@ class Subject(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     def __str__(self):
         return self.subject
+
+class Notification(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    department = models.ForeignKey(Department, on_delete=models.PROTECT)
+
+@receiver(signals.post_save, sender=Request)
+def create_notification(sender, instance, created, **kwargs):
+    if created:
+        for department in instance.departments.all():
+            Notification.objects.create(title=instance.student, description=instance.status, department=department)
