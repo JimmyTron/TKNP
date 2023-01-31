@@ -18,7 +18,7 @@
                                     <div class="form-group">
                                         {{ form|crispy }}
                                     </div>
-                                
+                                    {% csrf_token %}
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary pull-right">Register</button>
