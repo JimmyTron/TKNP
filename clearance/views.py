@@ -1,7 +1,9 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
+from django.urls import reverse_lazy
+from django.views.generic.edit import CreateView
 from django.contrib.auth.decorators import login_required
-from .forms import ClearanceRequestForm
+from .forms import ClearanceRequestForm, RequestForm
 from .models import Request
 
 @login_required
@@ -17,6 +19,11 @@ def clearance(request):
         form = ClearanceRequestForm(instance=request.user)
     return render(request, 'clearance/clearance.html', {'form':form,'title':'Students Clearane Request'})
 
+class RequestView(CreateView):
+    model = Request
+    form_class = RequestForm
+    template_name = 'request.html'
+    success_url = reverse_lazy('request')
 
 def requests(request):
     context = {

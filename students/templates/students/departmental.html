@@ -1,4 +1,4 @@
-{% extends "students/base.html" %}
+{% extends "clearance/template.html" %}
 {% load crispy_forms_tags%}
   {% block content%}
           <div class="card-body">
@@ -22,7 +22,7 @@
                         <tr>
                             <td>{{ user.profile.course }}</td>
                             <td>{{ user.profile.department.hod }}</td>
-                            <td>Not Cleared</td>
+                            <td>{{status}}</td>
                         </tr>
                    </tbody>
                     </table>

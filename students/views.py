@@ -2,11 +2,13 @@ from django.shortcuts import render,redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import StudentRegistrationForm, StudentUpdateForm, ProfileUpdateForm
-from clearance.models import Department, Subject
+from clearance.models import Department, Subject, Request
 
 def home(request):
+    clearance=Request(request)
     context = {
         'title': 'Clearance Home',
+        'status': clearance.status,
         'posts': Department.objects.all()
     }
     return render(request, 'students/home.html',context)
@@ -19,16 +21,20 @@ def docs(request):
 
 @login_required
 def general(request):
+    clearance=Request(request)
     context = {
         'title': 'General Clearance',
+        'status': clearance.status,
         'posts': Department.objects.all()
     }
     return render(request, 'students/general.html',context)
    
 @login_required
 def departmental(request):
+    clearance=Request(request)
     context = {
         'title': 'Departmental Clearance',
+        'status': clearance.status,
         'posts': Subject.objects.all()
     }
     return render(request, 'students/departmental.html',context)
