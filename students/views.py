@@ -1,7 +1,9 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.db import transaction
 from .forms import StudentRegistrationForm, StudentUpdateForm, ProfileUpdateForm
+from .models import *
 from clearance.models import Department, Subject, Request
 
 def home(request):
@@ -43,10 +45,23 @@ def register(request):
     if request.method == 'POST':
         form = StudentRegistrationForm(request.POST)
         if form.is_valid():
-            form.save()
+            adm_no = form.cleaned_data.get('admission_number')
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created for {username}! You can now access the site.')
-            return redirect('students-login')
+
+            if Student.objects.filter(adm_no=adm_no).exists():
+                with transaction.atomic():
+                    student = Student.objects.get(adm_no=adm_no)
+                    department = student.department
+                    course = student.course
+                    user = form.save()
+                    profile = Profile.objects.create(user=user, department=department, course=course, Adm_no=adm_no)
+                    
+                    messages.success(request, f'Account created for {username}! You can now access the site.')
+                    return redirect('students-login')
+            else:
+                messages.info(request, "Student with that admission number does not exist")
+                return redirect('students-registration')
+   
     else:
         form = StudentRegistrationForm()
     return render(request, 'students/register.html', {'form':form,'title':'Students Sign Up'})
