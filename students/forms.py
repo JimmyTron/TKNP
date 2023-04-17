@@ -5,10 +5,11 @@ from .models import Profile
 
 class StudentRegistrationForm(UserCreationForm):
     email = forms.EmailField()
-   
+    admission_number = forms.CharField(max_length=255)
+    
     class Meta:
         model = User
-        fields = ['username','first_name','last_name','email','password1','password2']
+        fields = ['username','first_name','last_name','email', 'admission_number', 'password1','password2']
 
 class StudentUpdateForm(forms.ModelForm):
     email = forms.EmailField()

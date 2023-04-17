@@ -10,16 +10,15 @@ class Profile(models.Model):
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     Adm_no =models.CharField(max_length=100)
+
+
     def __str__(self):
         return f'{self.user.username} Profile'
 
-    def save(self):
-        super().save()
+class Student(models.Model):
+    adm_no = models.CharField(max_length=100)  
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
 
-        img = Image.open(self.image.path)
-
-        if img.height > 300 or img.width > 300:
-            output_size = (300, 300)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
-
+    def __str__(self):
+        return self.adm_no
